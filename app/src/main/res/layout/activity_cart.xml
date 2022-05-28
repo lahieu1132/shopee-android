@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CartActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_cart_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#8ff7fd"
+        app:title="My Cart"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/my_cart_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent=".8"
+        android:text="TotalPrice"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:padding="18dp"
+        android:fontFamily="@font/amethysta"
+        android:id="@+id/totalPrice"
+        android:background="#8ff7fd"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent=".9"
+        android:id="@+id/cart_rec"
+        app:layout_constraintTop_toBottomOf="@id/totalPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/my_cart_item"/>
+
+    <Button
+        android:id="@+id/buy_now"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent=".8"
+        android:text="Buy_Now"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:drawableTint="@color/white"
+        android:background="@color/blue"
+        android:drawableLeft="@drawable/mycart"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
