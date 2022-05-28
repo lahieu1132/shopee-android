@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/84327/AndroidStudioProjects/shopee/app/src/main/res/drawable/bg_search.xml" value="0.1235" />
+        <entry key="..\:/Users/84327/AndroidStudioProjects/shopee/app/src/main/res/drawable/color_nav.xml" value="0.1235" />
+        <entry key="..\:/Users/84327/AndroidStudioProjects/shopee/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/84327/AndroidStudioProjects/shopee/app/src/main/res/layout/fragment_search.xml" value="0.25" />
+        <entry key="..\:/Users/84327/AndroidStudioProjects/shopee/app/src/main/res/menu/menu_nav.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/huyhung/AndroidStudioProjects/Shopeee/app/src/main/res/drawable/edit_text_bg.xml" value="0.1055" />
         <entry key="..\:/Users/huyhung/AndroidStudioProjects/Shopeee/app/src/main/res/drawable/edittext_bg.xml" value="0.1055" />
         <entry key="..\:/Users/huyhung/AndroidStudioProjects/Shopeee/app/src/main/res/layout/activity_add_adress.xml" value="0.16666666666666666" />

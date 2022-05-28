@@ -127,7 +127,7 @@ public class DetailedActivity extends AppCompatActivity {
         buyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DetailedActivity.this, AddAdressActivity.class));
+
             }
         });
     }

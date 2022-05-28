@@ -13,13 +13,27 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.shopeee.R;
 import com.example.shopeee.fragments.HomeFragment;
+import com.example.shopeee.fragments.SearchFragment;
+import com.example.shopeee.models.ShowAllModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     Fragment homeFragment;
     FirebaseAuth firebaseAuth;
+    private BottomNavigationView bottomNavigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +44,30 @@ public class MainActivity extends AppCompatActivity {
 
         loadFragment(homeFragment);
 
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        transaction.replace(R.id.home_container, new HomeFragment());
+
+                        break;
+                    case R.id.search:
+                        transaction.replace(R.id.home_container, new SearchFragment());
+
+                        break;
+                }
+                transaction.commit();
+                return true;
+            }
+        });
+
     }
+
     public void init() {
+        bottomNavigationView = findViewById(R.id.bottom_nav);
         toolbar = findViewById(R.id.home_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -41,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
     }
+
     private void loadFragment(Fragment homeFragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.home_container, homeFragment);
@@ -55,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id  = item.getItemId();
+        int id = item.getItemId();
 
         if (id == R.id.logout) {
             firebaseAuth.signOut();
